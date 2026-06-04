@@ -73,7 +73,12 @@ export const broadcast = (event, data) => {
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://construction-tracker.vercel.app',
+    /\.vercel\.app$/,
+  ],
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
